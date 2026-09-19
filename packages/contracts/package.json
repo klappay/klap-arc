@@ -1,0 +1,14 @@
+{
+  "name": "@klap-arc/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "install-deps": "./scripts/install-solidity-deps.sh",
+    "vendor": "./scripts/vendor-contracts.sh",
+    "build": "forge build",
+    "test": "forge test",
+    "deploy:testnet": "bash -c 'set -a; source .env; set +a; forge script script/DeployKlapArc.s.sol --rpc-url arc-testnet --account klap-arc-deployer --sender \"$DEPLOYER\" --broadcast'",
+    "deploy:mainnet": "bash -c 'set -a; source .env; set +a; forge script script/DeployKlapArc.s.sol --rpc-url arc-mainnet --account klap-arc-deployer --sender \"$DEPLOYER\" --broadcast'"
+  }
+}

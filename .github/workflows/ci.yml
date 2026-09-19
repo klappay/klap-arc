@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sdk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm --filter @klappay/arc-splits typecheck
+
+      - name: Test
+        run: pnpm --filter @klappay/arc-splits test
+
+      - name: Build
+        run: pnpm --filter @klappay/arc-splits build
+
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09 # v1.9.1
+
+      - name: Install Solidity dependencies (pinned to splits-v2's own versions)
+        working-directory: packages/contracts
+        run: ./scripts/install-solidity-deps.sh
+
+      - name: Vendor 0xSplits source from the pinned commit
+        working-directory: packages/contracts
+        run: ./scripts/vendor-contracts.sh
+
+      - name: Build
+        working-directory: packages/contracts
+        run: forge build
+
+      - name: Test
+        working-directory: packages/contracts
+        run: forge test

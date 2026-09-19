@@ -1,0 +1,25 @@
+{
+  "name": "klap-arc",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "packageManager": "pnpm@10.9.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm --filter @klappay/arc-splits build",
+    "test": "pnpm --filter @klappay/arc-splits test && pnpm --filter @klap-arc/contracts test",
+    "typecheck": "pnpm --filter @klappay/arc-splits typecheck",
+    "changeset": "changeset",
+    "release": "changeset publish",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.11",
+    "typescript": "^5.7.2",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-llms": "^1.13.4"
+  }
+}
