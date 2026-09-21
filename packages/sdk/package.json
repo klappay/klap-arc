@@ -1,6 +1,6 @@
 {
   "name": "@klappay/arc-splits",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Thin viem client for the klap-arc temporary 0xSplits fork on Circle's Arc",
   "license": "MIT",
   "type": "module",
