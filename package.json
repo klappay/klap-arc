@@ -11,6 +11,7 @@
     "test": "pnpm --filter @klappay/arc-splits test && pnpm --filter @klap-arc/contracts test",
     "typecheck": "pnpm --filter @klappay/arc-splits typecheck",
     "changeset": "changeset",
+    "version": "changeset version",
     "release": "changeset publish",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
