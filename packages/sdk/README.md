@@ -1,5 +1,10 @@
 # @klappay/arc-splits
 
+> **⛔ Deprecated.** 0xSplits officially supports Arc since 2026-10-02 —
+> use [`@0xsplits/splits-sdk`](https://www.npmjs.com/package/@0xsplits/splits-sdk)
+> (6.7.0 or later) instead. See the repo root's
+> [`docs/migration.md`](../../docs/migration.md).
+
 MIT. A thin [viem](https://viem.sh)-based client for the `klap-arc` fork of
 0xSplits' contracts, deliberately shaped close to
 [`@0xsplits/splits-sdk`](https://www.npmjs.com/package/@0xsplits/splits-sdk)'s

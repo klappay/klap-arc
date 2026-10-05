@@ -3,12 +3,19 @@
 
 # klap-arc
 
-> **⚠️ Temporary by design.** This project exists only until
-> [0xSplits](https://splits.org) ships official support for
-> [Circle's Arc](https://arc.network). The day that happens, this repo's
-> contracts are meant to be retired in favor of 0xSplits' own official
-> deployment and `@0xsplits/splits-sdk` — see [`docs/migration.md`](docs/migration.md).
-> It is not, and was never meant to be, a long-term replacement for 0xSplits.
+> **⛔ Deprecated.** 0xSplits now officially supports
+> [Circle's Arc](https://arc.network): `SplitsWarehouse` and the v2.2
+> `PushSplitFactory`/`PullSplitFactory` were deployed on Arc mainnet (`5042`)
+> and Arc testnet (`5042002`) on 2026-10-02
+> ([0xSplits/splits-contracts-monorepo#77](https://github.com/0xSplits/splits-contracts-monorepo/issues/77)),
+> and `@0xsplits/splits-sdk` supports Arc since 6.7.0. `klap-core` already
+> runs Arc through the official 0xSplits path, so this repo and
+> `@klappay/arc-splits` are no longer maintained — use
+> [`@0xsplits/splits-sdk`](https://www.npmjs.com/package/@0xsplits/splits-sdk)
+> instead. Any split already deployed through this fork's factory still
+> needs the sweep in [`docs/migration.md`](docs/migration.md).
+>
+> Everything below is kept as a historical record of why this stopgap existed.
 
 A temporary, **100% open-source**, self-hosted deployment of 0xSplits'
 splitter contracts on Arc — because 0xSplits does not run there yet. Every

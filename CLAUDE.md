@@ -1,14 +1,11 @@
 # klap-arc
 
-Read `README.md` first. **This repo is deliberately temporary** —
-self-hosted 0xSplits-equivalent contracts on Circle's Arc, meant to be
-retired the day 0xSplits ships official Arc support, not a long-lived
-product. Every session working in this repo should start by checking
-whether
-[0xSplits/splits-contracts-monorepo#77](https://github.com/0xSplits/splits-contracts-monorepo/issues/77)
-has closed, or a `5042.json`/`5042002.json` deployment file has appeared in
-their `packages/splits-v2/deployments/` — if either happened, the task is
-almost certainly `docs/migration.md`, not more feature work here.
+**Deprecated as of 2026-10-05.** 0xSplits shipped official Arc support
+(v2.2 factories on `5042`/`5042002`, 2026-10-02,
+[0xSplits/splits-contracts-monorepo#77](https://github.com/0xSplits/splits-contracts-monorepo/issues/77))
+and `klap-core` already moved onto it. Don't add features here; the only
+legitimate work left is `docs/migration.md` (sweeping splits that were
+actually deployed through this fork's factory) and retiring the repo.
 
 ## Rules specific to this repo
 
